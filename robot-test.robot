@@ -3,7 +3,7 @@ Library    RequestsLibrary
 Library    BuiltIn
 
 *** Variables ***
-${BASE_URL}    http://192.168.1.35:5000
+${BASE_URL}    http://localhost:5000
 
 *** Test Cases ***
 Plus API Should Return Correct Sum
