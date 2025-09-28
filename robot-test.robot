@@ -1,24 +1,25 @@
 *** Settings ***
 Library    RequestsLibrary
+Library    BuiltIn
 
 *** Variables ***
-${BASE_URL}    http://localhost:5000
+${BASE_URL}    http://192.168.1.35:5000
 
 *** Test Cases ***
 Plus API Should Return Correct Sum
-    [Tags]    plus
+    [Tags]    prime
     Create Session    myapi    ${BASE_URL}
-    ${response}=    GET On Session    myapi    /plus/3/5
-    Should Be Equal As Integers    ${response.json()['message']}    8
+    ${response}=    GET On Session    myapi    /is_prime/17
+    Should Be Equal    ${response.json()['message']}    ${TRUE}
 
 Plus API With Negative Numbers
-    [Tags]    plus
+    [Tags]    prime
     Create Session    myapi    ${BASE_URL}
-    ${response}=    GET On Session    myapi    /plus/-2/7
-    Should Be Equal As Integers    ${response.json()['message']}    5
+    ${response}=    GET On Session    myapi    /is_prime/36
+    Should Be Equal    ${response.json()['message']}    ${FALSE}
 
 Plus API With Zero
-    [Tags]    plus
+    [Tags]    prime
     Create Session    myapi    ${BASE_URL}
-    ${response}=    GET On Session    myapi    /plus/5/6
-    Should Be Equal As Integers    ${response.json()['message']}    11
+    ${response}=    GET On Session    myapi    /is_prime/13219
+    Should Be Equal    ${response.json()['message']}    ${TRUE}
