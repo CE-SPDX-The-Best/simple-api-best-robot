@@ -1,7 +1,7 @@
 *** Settings ***
 Library    RequestsLibrary
 Library    BuiltIn
-
+#sawadeekrub
 *** Variables ***
 ${BASE_URL}    http://192.168.1.35:5000
 
