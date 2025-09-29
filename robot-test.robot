@@ -1,7 +1,7 @@
 *** Settings ***
 Library    RequestsLibrary
 Library    BuiltIn
-#sawadeekrub
+
 *** Variables ***
 ${BASE_URL}    http://localhost:5000
 
