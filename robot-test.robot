@@ -6,20 +6,20 @@ Library    BuiltIn
 ${BASE_URL}    http://localhost:5000
 
 *** Test Cases ***
-Plus API Should Return Correct Sum
+Test_x_is_3dot7
     [Tags]    prime
     Create Session    myapi    ${BASE_URL}
-    ${response}=    GET On Session    myapi    /is_prime/17
-    Should Be Equal    ${response.json()['message']}    ${TRUE}
+    ${response}=    GET On Session    myapi    /is2honor/3.7
+    Should Be Equal    ${response.json()['message']}    ${False}
 
-Plus API With Negative Numbers
+Test_x_is_3dot4
     [Tags]    prime
     Create Session    myapi    ${BASE_URL}
-    ${response}=    GET On Session    myapi    /is_prime/36
-    Should Be Equal    ${response.json()['message']}    ${FALSE}
+    ${response}=    GET On Session    myapi    /is2honor/3.4
+    Should Be Equal    ${response.json()['message']}    ${True}
 
-Plus API With Zero
+Test_x_is_3dot1
     [Tags]    prime
     Create Session    myapi    ${BASE_URL}
-    ${response}=    GET On Session    myapi    /is_prime/13219
-    Should Be Equal    ${response.json()['message']}    ${TRUE}
+    ${response}=    GET On Session    myapi    /is2honor/3.1
+    Should Be Equal    ${response.json()['message']}    ${False}
